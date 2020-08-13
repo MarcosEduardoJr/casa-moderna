@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "254469216557",
+    "firebase_url": "https://casa-moderna-80b8f.firebaseio.com",
+    "project_id": "casa-moderna-80b8f",
+    "storage_bucket": "casa-moderna-80b8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254469216557:android:4db51574b607ac6e825ba4",
+        "android_client_info": {
+          "package_name": "com.casamoderna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254469216557-do4feccg8s4a28sv4i7d74d70sf1loqe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.casamoderna",
+            "certificate_hash": "f2075e5a13c1f88312563465d68368c535b2360e"
+          }
+        },
+        {
+          "client_id": "254469216557-0rint8gv84mbpdoqnbkp7h54srnnitjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_AN_SbeQcYap-FMtsQLnNyPeZieucUnk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254469216557-0rint8gv84mbpdoqnbkp7h54srnnitjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

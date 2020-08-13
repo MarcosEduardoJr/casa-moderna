@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ba68c8</color>
+    <color name="colorPrimaryDark">#883997</color>
+    <color name="colorAccent">#ba68c8</color>
+    <color name="background_gray">#f4f5f7</color>
+    <color name="text_color_gray">#f4f5f7</color>
+    <color name="text_color_gray_dark">#717171</color>
+    <color name="card_btn_delete">#ececec</color>
+
+</resources>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Casa Moderna</string>
+
+
+    <string name="local">local</string>
+    <string name="filter">filtro</string>
+    <string name="save">salvar</string>
+    <string name="cellphone">celular</string>
+    <string name="value_order">valor previsto do orçamento</string>
+    <string name="msg_new_order">cadastre seu pedido e deixe os arquiteto contatarem você para negociar</string>
+    <string name="msg_search">"encontre os pedidos e negocie diretamente com o seu possível cliente"</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="call">ligar</string>
+    <string name="msg_detail_order_local">R. magalhaes, Recife - PE</string>
+    <string name="msg_detail_order_value_order">orçamento disposto a pagar %s</string>
+    <string name="login">entrar</string>
+    <string name="login_one_click">entre com apenas 1 click</string>
+    <string name="hello_category_profile">Olá, %s!</string>
+    <string name="msg_new_order_imgs">é necessário colocar 4 imagens para o arquiteto conhecer o ambiente do projeto</string>
+    <string name="cant_select_photo">\"Não foi possivel selecionar foto\"</string>
+    <string name="msg_order_save">Seu pedido foi salvo, agora só esperar por um arquiteto(a) entrar em contato com você</string>
+    <string name="error_field_required">preencha este campo</string>
+    <string name="error_loading_data">Não foi possivel carregar seus dados</string>
+    <string name="error_network">Conexão com a internet lenta</string>
+    <string name="save_fail">Não foi possível salvar, tente novamente mais tarde</string>
+    <string name="error_field_img_required">Você precisa colocar 4 fotos para o arquiteto ver</string>
+    <string name="save_sucess">Salvo com sucesso</string>
+    <string name="estimate">orçamento</string>
+    <string name="do_filter">Filtrar</string>
+    <string name="estimate_until">orçamento até</string>
+    <string name="description">descrição</string>
+    <string name="currency_real">R$ %s</string>
+
+</resources>

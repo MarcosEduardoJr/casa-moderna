@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="IconOnlyButton" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+    </style>
+
+    <style name="OutlinedRoundedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <style name="LoadingSign">
+        <item name="colorAccent">#fff</item>
+    </style>
+</resources>

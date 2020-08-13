@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:background="@drawable/background_splash"
+        tools:context=".CategoryProfileFragment">
+
+        <TextView
+            android:id="@+id/nameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="@string/hello_category_profile"
+            android:textColor="#FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/archt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rippleColor="@color/colorAccent"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="1dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/ic_architect" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Sou Arquiteto(a)"
+                        />
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/modernHome"
+                android:layout_width="match_parent"
+                app:rippleColor="@color/colorAccent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="1dp"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_margin="4dp"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:src="@drawable/ic_house"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Quero Modernizar minha casa" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </FrameLayout>

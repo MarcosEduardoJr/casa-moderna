@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signFragment">
+
+    <fragment
+        android:id="@+id/signFragment"
+        android:name="com.casamoderna.SignFragment"
+        android:label="fragment_sign"
+        tools:layout="@layout/fragment_sign" >
+        <action
+            android:id="@+id/next_category_profile"
+            app:destination="@id/categoryProfileFragment2"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+        <argument
+            android:name="current_user"
+            app:argType="com.casamoderna.model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.casamoderna.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_order_detail"
+            app:destination="@id/orderDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newOrderFragment"
+        android:name="com.casamoderna.NewOrderFragment"
+        android:label="fragment_new_order"
+        tools:layout="@layout/fragment_new_order" >
+
+        <argument
+            android:name="current_user"
+            app:argType="com.casamoderna.model.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailFragment"
+        android:name="com.casamoderna.OrderDetailFragment"
+        android:label="fragment_order_detail"
+        tools:layout="@layout/fragment_order_detail" >
+        <argument
+            android:name="id_order"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryProfileFragment2"
+        android:name="com.casamoderna.CategoryProfileFragment"
+        android:label="fragment_category_profile"
+        tools:layout="@layout/fragment_category_profile" >
+        <action
+            android:id="@+id/nextaction_search"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/nextaction_new_order"
+            app:destination="@id/newOrderFragment" />
+        <argument
+            android:name="current_user"
+            app:argType="com.casamoderna.model.User" />
+    </fragment>
+</navigation>

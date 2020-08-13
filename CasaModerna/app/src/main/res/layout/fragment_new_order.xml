@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:padding="16dp"
+    tools:context=".NewOrderFragment">
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progress"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:translationZ="1dp"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_arrow_back_outline" />
+
+        <ScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_new_order" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_home_outline"
+                    app:startIconTint="@android:color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:hint="@string/local"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPostalAddress"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_edit_text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/white"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_phone_portrait_outline"
+                    app:startIconTint="@android:color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:background="@android:color/white"
+                        android:hint="@string/cellphone"
+                        android:imeOptions="actionNext"
+                        android:inputType="phone"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_edit_text"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_text_size"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/white"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_cash_outline"
+                    app:startIconTint="@android:color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/valueOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:hint="@string/value_order"
+                        android:imeOptions="actionNext"
+                        android:inputType="numberDecimal"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="@dimen/text_size_edit_text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@android:color/white"
+                    app:hintEnabled="false"
+                    app:startIconDrawable="@drawable/ic_document_text_outline"
+                    app:startIconTint="@android:color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:hint="@string/description"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine"
+                        android:lines="6"
+                        android:maxLines="16"
+                        android:textSize="@dimen/text_size_edit_text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/msg_new_order_imgs" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="36dp"
+                    android:paddingBottom="24dp"
+                    >
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/img1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toStartOf="@id/img2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgHouseOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="146dp"
+                                android:scaleType="fitXY"
+                                android:layout_gravity="center"
+                                android:layout_margin="4dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_camera_outline" />
+
+                            <ImageView
+                                android:id="@+id/deleteImgHouseOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:background="@color/card_btn_delete"
+                                android:src="@drawable/ic_close_outline"
+                                android:tint="@android:color/white" />
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/img2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/img1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:id="@+id/imgHouseTwo"
+                                android:layout_width="match_parent"
+                                android:layout_height="146dp"
+                                android:scaleType="fitXY"
+
+                                android:layout_gravity="center"
+                                android:layout_margin="4dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_camera_outline" />
+
+                            <ImageView
+                                android:id="@+id/deleteImgHouseTwo"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:background="@color/card_btn_delete"
+                                android:src="@drawable/ic_close_outline"
+                                android:tint="@android:color/white" />
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/img3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toStartOf="@id/img4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgHouseThree"
+                                android:layout_width="match_parent"
+                                android:layout_height="146dp"
+                                android:scaleType="fitXY"
+
+                                android:layout_gravity="center"
+                                android:layout_margin="4dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_camera_outline" />
+
+                            <ImageView
+                                android:id="@+id/deleteImgHouseThree"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:background="@color/card_btn_delete"
+                                android:src="@drawable/ic_close_outline"
+                                android:tint="@android:color/white" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/img4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/img3"
+                        app:layout_constraintTop_toBottomOf="@id/img2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgHouseFour"
+                                android:layout_width="match_parent"
+                                android:layout_height="146dp"
+                                android:scaleType="fitXY"
+
+                                android:layout_gravity="center"
+                                android:layout_margin="4dp"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/ic_camera_outline" />
+
+
+                            <ImageView
+                                android:id="@+id/deleteImgHouseFour"
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:adjustViewBounds="true"
+                                android:background="@color/card_btn_delete"
+                                android:src="@drawable/ic_close_outline"
+                                android:tint="@android:color/white" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/text_size_medium" />
+
+</FrameLayout>
