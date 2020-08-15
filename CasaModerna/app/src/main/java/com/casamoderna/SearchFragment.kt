@@ -11,8 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.casamoderna.adapter.OrderListAdapter
 import com.casamoderna.viewmodel.FireStoreRequestViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import kotlinx.android.synthetic.main.filter_order.*
 import kotlinx.android.synthetic.main.filter_order.view.*
+import kotlinx.android.synthetic.main.fragment_order_detail.*
 import kotlinx.android.synthetic.main.fragment_search.*
+import kotlinx.android.synthetic.main.fragment_search.doFilter
 import java.text.NumberFormat
 import java.util.*
 
@@ -20,6 +23,7 @@ import java.util.*
  * A simple [Fragment] subclass.
  */
 class SearchFragment : Fragment() {
+    private lateinit var bottomSheetDialog: BottomSheetDialog
     private lateinit var v: View
     private lateinit var viewAdapter: OrderListAdapter
     private lateinit var viewManager: LinearLayoutManager
@@ -77,27 +81,53 @@ class SearchFragment : Fragment() {
     private fun initializeComponents() {
         back_search.setOnClickListener { findNavController().navigateUp() }
         filter.setOnClickListener { filterOrder() }
+
+        doFilter.setOnClickListener {
+            filter()
+        }
+    }
+
+    private fun filter() {
+        firestoreViewModel.getOrders(
+            localFilter.text.toString(), fetchLimitEstimate()
+        )
+    }
+
+    private fun fetchLimitEstimate(): Int {
+        return if (!this::bottomSheetDialog.isInitialized) {
+            999999
+        } else if (bottomSheetDialog.btdEstimate.text.toString() == "") {
+            999999
+        } else {
+            bottomSheetDialog.btdEstimate.text.toString().toInt()
+        }
     }
 
     private fun filterOrder() {
-        var bottomSheetDialog = BottomSheetDialog(activity as MainActivity)
+        bottomSheetDialog = BottomSheetDialog(activity as MainActivity)
         val view = layoutInflater.inflate(R.layout.filter_order, null)
-        configBottomSheetComponents(view)
         bottomSheetDialog.setContentView(view)
         bottomSheetDialog.show()
-    }
-
-    private fun configBottomSheetComponents(v: View?) {
-        v!!.minus.setOnClickListener {
-            if (estimate > 0)
-                estimate--
+        bottomSheetDialog.btdEstimate.setText("10000")
+        bottomSheetDialog.btdMinus.setOnClickListener {
+            if (bottomSheetDialog.btdEstimate.text.toString().toInt() > 1) {
+                bottomSheetDialog.btdEstimate.setText(
+                    (bottomSheetDialog.btdEstimate.text.toString().toInt() - 1).toString()
+                )
+            }
         }
 
-        v.plus.setOnClickListener {
-            if (estimate < 999999999999)
-                estimate++
+        bottomSheetDialog.btdPlus.setOnClickListener {
+            bottomSheetDialog.btdEstimate.setText(
+                ( bottomSheetDialog.btdEstimate.text.toString().toInt() + 1).toString()
+            )
         }
+        bottomSheetDialog.btdDoFilter.setOnClickListener {
+            filter()
+        }
+
     }
+
 
     private fun formatterFilterValueOrder(value: Float): String {
         val format = NumberFormat.getCurrencyInstance()

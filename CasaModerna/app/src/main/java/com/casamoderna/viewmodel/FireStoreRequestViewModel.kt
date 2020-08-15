@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.casamoderna.model.Order
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.fragment_new_order.*
@@ -33,6 +34,36 @@ class FireStoreRequestViewModel : ViewModel() {
                         Log.d("FIRESTORE_GET_ORDERS", "${document.id} => ${document.data}")
                     }
 
+                } else {
+                    ordersMutableLiveData.value = null
+                }
+            }
+            .addOnFailureListener {
+                ordersMutableLiveData.value = null
+                Log.d("FIRESTORE_GET_ORDERS", "Failure${it.message}")
+            }
+    }
+
+    fun getOrders(local: String, limitEstimate: Int) {
+        FirebaseFirestore.getInstance().collection("orders")
+            .whereGreaterThanOrEqualTo("local", local)
+            .get()
+            .addOnSuccessListener { result ->
+                if (result != null) {
+                    var orderAux = ArrayList<Order>()
+
+                    for (document in result) {
+                        val order = queryToOrder("", document)
+                        orderAux.add(order)
+                        Log.d("FIRESTORE_GET_ORDERS", "${document.id} => ${document.data}")
+                    }
+
+                    val ordersFiltered  = orderAux.filter { it.valueOrder!!.toInt() <= limitEstimate   }
+                    orderAux = ArrayList()
+                    ordersFiltered.forEach{
+                        orderAux.add(it)
+                    }
+                    ordersMutableLiveData.value = orderAux
                 } else {
                     ordersMutableLiveData.value = null
                 }
@@ -181,8 +212,6 @@ class FireStoreRequestViewModel : ViewModel() {
         imgPosition.removeAt(0)
         saveImgOrder(uuid, uris, imgPosition)
     }
-
-
 
 
     /*
