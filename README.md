@@ -7,10 +7,11 @@ A ideia é ter um app facil e funcional, exemplo disso é que foi implementado o
  
 
 
-## O que foi usado
+## Dentro do app
 * Sistema de build Gradle 
 * Material Design
-* Firestore
-* Cloud Firebase
-* Auth Firebase ( Google One Tap ) 
+* Firebase
+ ** Firestore
+ ** Cloud Firebase
+ ** Auth Firebase ( Google One Tap ) 
 * Picasso 
