@@ -2,6 +2,8 @@
  
  
 ![](https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg?v=4&s=200)
+
+<img src="https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg" width="400" height="790">
  
 
 
