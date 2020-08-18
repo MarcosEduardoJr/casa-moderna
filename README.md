@@ -2,12 +2,12 @@
  
  
 
-![1.jpeg](https://bitbucket.org/repo/7ndaaA/images/3102804929-Captura%20de%20tela%20de%202015-10-22%2011-28-03.png)
-![2.jpeg] 
-![3.jpeg]
-![4.jpeg] 
-![5.jpeg] 
-![6.jpeg]
+![1.jpeg](https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg)
+![2.jpeg] (https://github.com/MarcosEduardoJr/casa-moderna/blob/master/2.jpeg)
+![3.jpeg](https://github.com/MarcosEduardoJr/casa-moderna/blob/master/3.jpeg)
+![4.jpeg] (https://github.com/MarcosEduardoJr/casa-moderna/blob/master/4.jpeg)
+![5.jpeg] (https://github.com/MarcosEduardoJr/casa-moderna/blob/master/5.jpeg)
+![6.jpeg](https://github.com/MarcosEduardoJr/casa-moderna/blob/master/6.jpeg)
 
 
 
