@@ -1,4 +1,4 @@
-package com.casamoderna
+package com.casamoderna.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import com.casamoderna.R
 import com.casamoderna.model.User
 import kotlinx.android.synthetic.main.fragment_category_profile.*
 
@@ -42,12 +43,16 @@ class CategoryProfileFragment : Fragment() {
     }
 
     private fun nextPageSearch() {
-        val action = CategoryProfileFragmentDirections.nextactionSearch()
+        val action =
+            CategoryProfileFragmentDirections.nextactionSearch()
         Navigation.findNavController(v).navigate(action)
     }
 
     private fun nextPageNewOrder() {
-        val action = CategoryProfileFragmentDirections.nextactionNewOrder(currentUser = user)
+        val action =
+            CategoryProfileFragmentDirections.nextactionNewOrder(
+                currentUser = user
+            )
         Navigation.findNavController(v).navigate(action)
     }
 

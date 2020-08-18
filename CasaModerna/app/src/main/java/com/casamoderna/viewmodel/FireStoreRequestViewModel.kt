@@ -23,7 +23,6 @@ class FireStoreRequestViewModel : ViewModel() {
 
     fun getOrders() {
         FirebaseFirestore.getInstance().collection("orders")
-            .whereGreaterThanOrEqualTo("local", "rua")
             .get()
             .addOnSuccessListener { result ->
                 if (result != null) {
@@ -46,7 +45,6 @@ class FireStoreRequestViewModel : ViewModel() {
 
     fun getOrders(local: String, limitEstimate: Int) {
         FirebaseFirestore.getInstance().collection("orders")
-            .whereGreaterThanOrEqualTo("local", local)
             .get()
             .addOnSuccessListener { result ->
                 if (result != null) {
@@ -58,9 +56,11 @@ class FireStoreRequestViewModel : ViewModel() {
                         Log.d("FIRESTORE_GET_ORDERS", "${document.id} => ${document.data}")
                     }
 
-                    val ordersFiltered  = orderAux.filter { it.valueOrder!!.toInt() <= limitEstimate   }
+                    val ordersFiltered = orderAux.filter {
+                        it.valueOrder!!.toInt() <= limitEstimate && it.local!!.toLowerCase().contains(local)
+                    }
                     orderAux = ArrayList()
-                    ordersFiltered.forEach{
+                    ordersFiltered.forEach {
                         orderAux.add(it)
                     }
                     ordersMutableLiveData.value = orderAux

@@ -1,4 +1,4 @@
-package com.casamoderna
+package com.casamoderna.fragments
 
 import android.content.Intent
 import android.graphics.PorterDuff
@@ -14,6 +14,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.casamoderna.MainActivity
+import com.casamoderna.util.MaskEditUtil
+import com.casamoderna.R
 import com.casamoderna.model.Order
 import com.casamoderna.model.User
 import com.casamoderna.viewmodel.FireStoreRequestViewModel
@@ -71,8 +74,18 @@ class NewOrderFragment : Fragment() {
     }
 
     private fun initializeComponents() {
-        phone.addTextChangedListener(MaskEditUtil.mask(phone, MaskEditUtil.FORMAT_FONE))
-        valueOrder.addTextChangedListener(MaskEditUtil.mask(valueOrder, MaskEditUtil.FORMAT_MONEY));
+        phone.addTextChangedListener(
+            MaskEditUtil.mask(
+                phone,
+                MaskEditUtil.FORMAT_FONE
+            )
+        )
+        valueOrder.addTextChangedListener(
+            MaskEditUtil.mask(
+                valueOrder,
+                MaskEditUtil.FORMAT_MONEY
+            )
+        );
         updateUi()
         back.setOnClickListener { findNavController().navigateUp() }
         imgHouseOne.setOnClickListener { view -> selectPhoto(view, 1) }
@@ -308,6 +321,11 @@ class NewOrderFragment : Fragment() {
             fieldsValid = false
         }
 
+        if (TextUtils.isEmpty(description.text.toString())) {
+            description.error = getString(R.string.error_field_required)
+            fieldsValid = false
+        }
+
         if (imgHouseOne.drawable == ContextCompat.getDrawable(
                 requireContext(),
                 R.drawable.ic_camera_outline
@@ -326,7 +344,8 @@ class NewOrderFragment : Fragment() {
             )
         ) {
             fieldsValid = false
-            Snackbar.make(v, R.string.error_field_img_required, Snackbar.LENGTH_LONG).show()
+            Snackbar.make(v,
+                R.string.error_field_img_required, Snackbar.LENGTH_LONG).show()
         }
         if (fieldsValid) {
             saveFirebase()

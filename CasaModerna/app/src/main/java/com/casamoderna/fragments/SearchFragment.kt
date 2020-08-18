@@ -1,4 +1,4 @@
-package com.casamoderna
+package com.casamoderna.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.casamoderna.MainActivity
+import com.casamoderna.R
 import com.casamoderna.adapter.OrderListAdapter
 import com.casamoderna.viewmodel.FireStoreRequestViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.filter_order.*
-import kotlinx.android.synthetic.main.filter_order.view.*
-import kotlinx.android.synthetic.main.fragment_order_detail.*
 import kotlinx.android.synthetic.main.fragment_search.*
 import kotlinx.android.synthetic.main.fragment_search.doFilter
 import java.text.NumberFormat

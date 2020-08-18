@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_gray"
-    android:padding="16dp"
-    tools:context=".NewOrderFragment">
+    android:padding="@dimen/padding_content"
+    tools:context=".fragments.NewOrderFragment">
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress"
@@ -183,7 +183,7 @@
                             <ImageView
                                 android:id="@+id/imgHouseOne"
                                 android:layout_width="match_parent"
-                                android:layout_height="146dp"
+                                android:layout_height="@dimen/height_img_card_new_order"
                                 android:scaleType="fitXY"
                                 android:layout_gravity="center"
                                 android:layout_margin="4dp"
@@ -226,7 +226,7 @@
                             <ImageView
                                 android:id="@+id/imgHouseTwo"
                                 android:layout_width="match_parent"
-                                android:layout_height="146dp"
+                                android:layout_height="@dimen/height_img_card_new_order"
                                 android:scaleType="fitXY"
 
                                 android:layout_gravity="center"
@@ -269,7 +269,7 @@
                             <ImageView
                                 android:id="@+id/imgHouseThree"
                                 android:layout_width="match_parent"
-                                android:layout_height="146dp"
+                                android:layout_height="@dimen/height_img_card_new_order"
                                 android:scaleType="fitXY"
 
                                 android:layout_gravity="center"
@@ -311,7 +311,7 @@
                             <ImageView
                                 android:id="@+id/imgHouseFour"
                                 android:layout_width="match_parent"
-                                android:layout_height="146dp"
+                                android:layout_height="@dimen/height_img_card_new_order"
                                 android:scaleType="fitXY"
 
                                 android:layout_gravity="center"

@@ -1,4 +1,4 @@
-package com.casamoderna
+package com.casamoderna.util
 
 import android.text.Editable
 import android.text.TextWatcher

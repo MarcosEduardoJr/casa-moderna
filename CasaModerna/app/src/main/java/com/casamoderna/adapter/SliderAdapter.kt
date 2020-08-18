@@ -23,15 +23,7 @@ class SliderAdapter(private val context: Context) :
         notifyDataSetChanged()
     }
 
-    fun deleteItem(position: Int) {
-        mSliderItems.removeAt(position)
-        notifyDataSetChanged()
-    }
 
-    fun addItem(sliderItem: SliderItem) {
-        mSliderItems.add(sliderItem)
-        notifyDataSetChanged()
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup): SliderAdapterVH {
         val inflate = LayoutInflater.from(parent.context)
@@ -60,8 +52,7 @@ class SliderAdapter(private val context: Context) :
     inner class SliderAdapterVH(itemView: View) :
         ViewHolder(itemView) {
         var imageViewBackground: ImageView = itemView.findViewById(R.id.iv_auto_image_slider)
-        var imageGifContainer: ImageView = itemView.findViewById(R.id.iv_gif_container)
-        var textViewDescription: TextView = itemView.findViewById(R.id.tv_auto_image_slider)
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.casamoderna
+package com.casamoderna.fragments
 
 import android.content.Intent
 import android.graphics.Color
@@ -12,6 +12,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.casamoderna.fragments.OrderDetailFragmentArgs
+import com.casamoderna.R
 import com.casamoderna.adapter.SliderAdapter
 import com.casamoderna.model.Order
 import com.casamoderna.model.SliderItem

@@ -32,5 +32,7 @@
     <string name="estimate_until">orçamento até</string>
     <string name="description">descrição</string>
     <string name="currency_real">R$ %s</string>
+    <string name="im_arch">Sou Arquiteto(a)</string>
+    <string name="transform_morden_house">Quero Modernizar minha casa</string>
 
 </resources>

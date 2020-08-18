@@ -1,12 +1,10 @@
 package com.casamoderna.viewholder
 
-import android.content.ContentResolver
-import android.provider.Settings.Global.getString
 import android.view.View
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.casamoderna.R
-import com.casamoderna.SearchFragmentDirections
+import com.casamoderna.fragments.SearchFragmentDirections
 import com.casamoderna.model.Order
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.order_item.view.*

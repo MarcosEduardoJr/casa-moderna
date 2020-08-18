@@ -3,9 +3,9 @@ package com.casamoderna.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.casamoderna.viewholder.OrderListViewHolder
 import com.casamoderna.R
 import com.casamoderna.model.Order
+import com.casamoderna.viewholder.OrderListViewHolder
 
 /**
  * Created by marco on 10,August,2020

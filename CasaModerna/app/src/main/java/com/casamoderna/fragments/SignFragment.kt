@@ -1,14 +1,15 @@
-package com.casamoderna
+package com.casamoderna.fragments
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.widget.Constraints.TAG
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.casamoderna.R
 import com.casamoderna.model.User
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -20,7 +21,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_sign.*
-import java.lang.Exception
 
 internal const val RC_SIGN_IN = 1337
 
@@ -58,7 +58,10 @@ class SignFragment : Fragment() {
 
     private fun nextPage() {
         progress.visibility = View.INVISIBLE
-        val action = SignFragmentDirections.nextCategoryProfile(currentUser = user!!)
+        val action =
+            SignFragmentDirections.nextCategoryProfile(
+                currentUser = user!!
+            )
         Navigation.findNavController(v).navigate(action)
     }
 
@@ -75,8 +78,7 @@ class SignFragment : Fragment() {
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithCredential:failure", task.exception)
-                        //   Snackbar.make(activity, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
-                        updateUI()
+                        Snackbar.make(v, "Salvo com sucesso", Snackbar.LENGTH_LONG).show()
                     }
                 }
         }
@@ -94,7 +96,6 @@ class SignFragment : Fragment() {
             .add(this.user!!)
             .addOnSuccessListener {
                 updateUI()
-                Snackbar.make(v, "Salvo com sucesso", Snackbar.LENGTH_LONG).show()
             }
             .addOnFailureListener {
                 Snackbar.make(
@@ -115,7 +116,9 @@ class SignFragment : Fragment() {
 
         val signInIntent = googleSignInClient.signInIntent
 
-        startActivityForResult(signInIntent, RC_SIGN_IN)
+        startActivityForResult(signInIntent,
+            RC_SIGN_IN
+        )
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
