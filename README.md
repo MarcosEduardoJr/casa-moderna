@@ -1,7 +1,7 @@
 # Aplicativo de Arquitetos e pessoas que querem reformar sua casa#
  
  
-![](https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg){:height="50%" width="50%"}
+![](https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg?v=4&s=200)
  
 
 
