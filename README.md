@@ -11,7 +11,7 @@ A ideia é ter um app facil e funcional, exemplo disso é que foi implementado o
 * Sistema de build Gradle 
 * Material Design
 * Firebase
- ** Firestore
- ** Cloud Firebase
- ** Auth Firebase ( Google One Tap ) 
+ * Firestore
+ * Cloud Firebase
+ * Auth Firebase ( Google One Tap ) 
 * Picasso 
