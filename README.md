@@ -2,7 +2,7 @@
  
  
   
-<img src="https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg" width="20%" height="20%">
+<img src="https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg" width="20%" height="20%">  | <img src="https://github.com/MarcosEduardoJr/casa-moderna/blob/master/1.jpeg" width="20%" height="20%">
  
 
 
