@@ -1,4 +1,4 @@
-# Aplicativo de Arquitetos e pessoas que querem reformar sua casa#
+# Aplicativo de Arquitetos e pessoas que querem reformar sua casa
  
  
   
@@ -6,29 +6,11 @@
  
 
 
+A ideia é ter um app facil e funcional, exemplo disso é que foi implementado o Google One-Tap, para entrar/cadastrar apenas com um toque. 
 
-- __Lista de repositórios__. Exemplo de chamada na API: `https://api.github.com/search/repositories?q=language:Java&sort=stars&page=1`
-  * Paginação na tela de lista, com endless scroll / scroll infinito (incrementando o parâmetro `page`).
-  * Cada repositório deve exibir Nome do repositório, Descrição do Repositório, Nome / Foto do autor, Número de Stars, Número de Forks
-  * Ao tocar em um item, deve levar a lista de Pull Requests do repositório
-- __Pull Requests de um repositório__. Exemplo de chamada na API: `https://api.github.com/repos/<criador>/<repositório>/pulls`
-  * Cada item da lista deve exibir Nome / Foto do autor do PR, Título do PR, Data do PR e Body do PR
-  * Ao tocar em um item, deve abrir no browser a página do Pull Request em questão
-
-* Sistema de build Gradle
-* Mapeamento JSON -> Objeto (GSON  )
+* Sistema de build Gradle 
 * Material Design
-
-
-
-* Framework para comunicação com API
-* Testes no projeto (unitários e por tela)
-* Testes funcionais (que naveguem pelo aplicativo como casos de uso)
-* Cache de imagens e da API
-* Suportar mudanças de orientação das telas sem perder estado
-
-
-
-* Retrofit 
+* Firestore
+* Cloud Firebase
+* Auth Firebase ( Google One Tap ) 
 * Picasso 
-* Espresso | Robotium | Robolectric
